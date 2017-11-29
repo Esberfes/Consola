@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -128,11 +129,95 @@ public class Consola {
 		if(!isInit) return;
 		textArea.append(String.valueOf(text));
 	}
+	
+	/***Array in lines***/
 	public <T> void writeArrayInLines(T[] array) {
 		if(!isInit) return;
 		for(T entry: array) {
 			textArea.append("\n" + String.valueOf(entry) );
 		}
+	}
+	public void writeArrayInLines(int[] array) {
+		if(!isInit) return;
+		for(int entry: array) {
+			textArea.append("\n" + String.valueOf(entry) );
+		}
+	}
+	public void writeArrayInLines(long[] array) {
+		if(!isInit) return;
+		for(long entry: array) {
+			textArea.append("\n" + String.valueOf(entry) );
+		}
+	}
+	public void writeArrayInLines(double[] array) {
+		if(!isInit) return;
+		for(double entry: array) {
+			textArea.append("\n" + String.valueOf(entry) );
+		}
+	}
+	public void writeArrayInLines(float[] array) {
+		if(!isInit) return;
+		for(float entry: array) {
+			textArea.append("\n" + String.valueOf(entry) );
+		}
+	}
+	public void writeArrayInLines(boolean[] array) {
+		if(!isInit) return;
+		for(boolean entry: array) {
+			textArea.append("\n" + String.valueOf(entry) );
+		}
+	}
+	
+	/***Array same line***/
+	public void writeArray(int[] array) {
+		if(!isInit) return;
+		textArea.append("\n" + "{");
+		for(int i = 0; i < array.length; i++) {		
+			textArea.append(String.valueOf(array[i]));
+			if(i != array.length -1)
+				textArea.append(",");
+		}
+		textArea.append("}");
+	}
+	public void writeArray(long[] array) {
+		if(!isInit) return;
+		textArea.append("\n" + "{");
+		for(int i = 0; i < array.length; i++) {		
+			textArea.append(String.valueOf(array[i]));
+			if(i != array.length -1)
+				textArea.append(",");
+		}
+		textArea.append("}");
+	}
+	public void writeArray(float[] array) {
+		if(!isInit) return;
+		textArea.append("\n" + "{");
+		for(int i = 0; i < array.length; i++) {		
+			textArea.append(String.valueOf(array[i]));
+			if(i != array.length -1)
+				textArea.append(",");
+		}
+		textArea.append("}");
+	}
+	public void writeArray(double[] array) {
+		if(!isInit) return;
+		textArea.append("\n" + "{");
+		for(int i = 0; i < array.length; i++) {		
+			textArea.append(String.valueOf(array[i]));
+			if(i != array.length -1)
+				textArea.append(",");
+		}
+		textArea.append("}");
+	}
+	public void writeArray(boolean[] array) {
+		if(!isInit) return;
+		textArea.append("\n" + "{");
+		for(int i = 0; i < array.length; i++) {		
+			textArea.append(String.valueOf(array[i]));
+			if(i != array.length -1)
+				textArea.append(",");
+		}
+		textArea.append("}");
 	}
 	public <T> void writeArray(T[] array) {
 		if(!isInit) return;
@@ -144,7 +229,11 @@ public class Consola {
 		}
 		textArea.append("}");
 	}
-	//Devuelve un String
+	
+	/**
+	 * Devuelve un String
+	 * @return
+	 */
 	public String read() {
 		if(!isInit) return "";
 		String result ="";
@@ -157,7 +246,11 @@ public class Consola {
 		writeLine("Input: " + result);
 		return result;
 	}
-	//Devuelve un Integer y en caso de que los datos de entrada no sean digito el resultado sera 0
+	
+	/**
+	 * Devuelve un Integer y en caso de que los datos de entrada no sean digito el resultado sera 0
+	 * @return
+	 */
 	public int readInt() {
 		if(!isInit) return 0;
 		int result = 0;
@@ -174,7 +267,11 @@ public class Consola {
 		writeLine("Input: " + result);
 		return result;
 	}
-	//Devuelve un Double y en caso de que los datos de entrada no sean digito el resultado sera 0
+	
+	/**
+	 * Devuelve un Double y en caso de que los datos de entrada no sean digito el resultado sera 0
+	 * @return
+	 */
 	public double readDouble() {
 		if(!isInit) return 0D;
 		double result = 0D;
@@ -191,7 +288,11 @@ public class Consola {
 		writeLine("Input: " + result);
 		return result;
 	}
-	//Devuelve un Float y en caso de que los datos de entrada no sean digito el resultado sera 0
+	
+	/**
+	 * Devuelve un Float y en caso de que los datos de entrada no sean digito el resultado sera 0
+	 * @return
+	 */
 	public float readFloat() {
 		if(!isInit) return 0F;
 		float result = 0F;
@@ -208,7 +309,11 @@ public class Consola {
 		writeLine("Input: " + result);
 		return result;
 	}
-	//Devuelve un Long y en caso de que los datos de entrada no sean digito el resultado sera 0
+	
+	/**
+	 * Devuelve un Long y en caso de que los datos de entrada no sean digito el resultado sera 0
+	 * @return long
+	 */
 	public long readLong() {
 		if(!isInit) return 0L;
 		long result = 0L;
@@ -225,7 +330,10 @@ public class Consola {
 		writeLine("Input: " + result);
 		return result;
 	}
-	//Devuelve un Boolean y en caso de que los datos de entrada no sean boolean el resultado sera false
+	/**
+	 * Devuelve un Boolean y en caso de que los datos de entrada no sean boolean el resultado sera false
+	 * @return boolean
+	 */
 	public boolean readBoolean() {
 		if(!isInit) return false;
 		boolean result = false;
@@ -251,12 +359,17 @@ public class Consola {
 		frame.dispose();
 	}
 	//TEST
+
+	
+	
+	
 /*
 	public static void main(String[] args) {
 		
 		Consola consola = new Consola(true);
-		String[] opciones = {"perro","gato","gallina"};
-		consola.writeLine(consola.showOptionPanel("Animales", "Selecciona un animal", opciones));
+		int[] array = {1,2,3,4};
+		consola.writeArray(array);
+		
 	}
 */
 }
